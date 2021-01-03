@@ -1,7 +1,7 @@
 # MLIR中的standalone工程
 MLIR官方提供了一个toy工程来做MLIR的tutorial，其中介绍了toy语言、AST、定义Dialet以及Operations、Lowering。这个工程仍然比较复杂。实际上，*llvm-project/mlir/examples*目录下还有一个用例，叫standalone，相比toy要更简单，我们也可以通过它来学习MLIR的基本能力。
 
-## build 'standalone'
+## 1. 构建'standalone'
 要build standalone，首先要build llvm-project。按照standalone中README.md的说明，在构建llvm-project时要加`-DLLVM_INSTALL_UTILS=ON`选项，目的是为了生成FileCheck这个工具。 
 之后遵照README的说明，单独构建standalone工程：
 > ```sh
@@ -34,7 +34,7 @@ MLIR官方提供了一个toy工程来做MLIR的tutorial，其中介绍了toy语�
 |c++ -c|standalone-opt.cpp|standalone-opt.cpp.o|
 |c++ |standalone-opt.cpp.o *.a|standalone-opt|
 
-## 测试'standalone'
+## 2. 测试'standalone'
 上述过程的最后一步是测试：
 ```
 /Users/chenlong/software/llvm-project/build/bin/llvm-lit -sv /Users/chenlong/software/llvm-project/mlir/examples/standalone/build/test
