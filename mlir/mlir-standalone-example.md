@@ -42,7 +42,7 @@ MLIR官方提供了一个toy工程来做MLIR的tutorial，其中介绍了toy语�
 查看standalone-translate的测试脚本：
 ```shell
 $ cat test/Standalone/Output/standalone-translate.mlir.script 
-set -o pipefail;{ : 'RUN: at line 1';   /Users/chenlong/software/llvm-project/mlir/examples/standalone/build/bin/standalone-translate --help | /Users/chenlong/software/llvm-project/build/bin/FileCheck /Users/chenlong/software/llvm-project/mlir/examples/standalone/test/Standalone/standalone-translate.mlir; }
+/Users/chenlong/software/llvm-project/mlir/examples/standalone/build/bin/standalone-translate --help | /Users/chenlong/software/llvm-project/build/bin/FileCheck /Users/chenlong/software/llvm-project/mlir/examples/standalone/test/Standalone/standalone-translate.mlir;
 ```
 只是测试了--help的输出，从中可以看出MLIR内置了许多有趣的转换能力，比如*arm-neon-mlir-to-llvmir*，看起来arm-neon，avx512等也是一种MLIR的dialect。
 ```shell
@@ -70,3 +70,4 @@ General options:
       --mlir-to-rocdlir                                   - mlir-to-rocdlir
       --serialize-spirv                                   - serialize-spirv
 ```
+将来可以试验一下这些方言的转换能力。
