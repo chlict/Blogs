@@ -69,7 +69,7 @@ template <class T, T t>
 > template < parameter-list > typename(C++17)|class name(optional) = default	(2)  
 > template < parameter-list > typename(C++17)|class ... name(optional)	(3)	(since C++11)
 
-一般的`template parameter`也就是简单的'**typename|class** name'。
+一般的`template parameter`也就是简单的`typename|class name`。
 
 举例来说：
 ```cpp
@@ -88,11 +88,11 @@ A<B> a;
 [2] https://en.cppreference.com/w/cpp/language/template_parameters  
 [3] https://en.cppreference.com/w/cpp/language/partial_specialization  
 
-## 2. 'class template' vs 'template class'
+## 2. `class template` vs `template class`
 理论上说，只有'class template'，没有'template class'。通常定义一个模板类即是定义了一个'class template'，意思是当用实际的类(arguments)替换掉里面的模板参数(parameters)时，这个模板就能生成一个类定义。有时候人们会称从模板实例化出来的类为'template class'，但标准的说法仍然是instantiation。
 
 C++的作者Bjarne Stroustrup对此持不较真的态度，他在其著作*The C++ Programming Language 4th edition*中说道：
 > There are people who make semantic distinctions between the terms class template and template class. I don't; that would be too subtle: please consider those terms interchangeable. Similarly, I consider function template interchangeable with template function.
 
-参考： 
+参考：  
 [1] https://stackoverflow.com/questions/879535/what-is-the-difference-between-a-template-class-and-a-class-template
