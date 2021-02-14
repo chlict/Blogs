@@ -13,7 +13,7 @@ int main() {
     foo(a); // a is called argument
 }
 ```
-### 1.2. 模板的'parameter'和'argument'
+### 1.2. 模板的parameter和argument
 另一组相近的概念是`template parameter`与`template argument`。`template parameter`是指定义一个template时，紧跟在`template`声明后的`<>`中出现的模板参数，而`template argument`是指实例化或特例化一个template时，出现在模板名称后的`<>`里的类型参数。举例来说：
 ```cpp
 // T and U are template parameters
@@ -65,8 +65,8 @@ template <class T, T t>
 前文说过，`template template parameter`是`template paramter`的一种，是指用模板来做模板参数。cppreference[2]中对其定义如下：
 
 > **Template template parameter**  
-> template < parameter-list > typename(C++17)|class name(optional)	(1)	 
-> template < parameter-list > typename(C++17)|class name(optional) = default	(2)	 
+> template < parameter-list > typename(C++17)|class name(optional)	(1)  
+> template < parameter-list > typename(C++17)|class name(optional) = default	(2)  
 > template < parameter-list > typename(C++17)|class ... name(optional)	(3)	(since C++11)
 
 一般的`template parameter`也就是简单的'**typename|class** name'。
@@ -83,7 +83,7 @@ A<B> a;
 ```
 模板A中的`template <typename> X`就是一个`template template parameter`，B是一个可以匹配X的模板，在`A<B>`表达式中作为`template template argument`实例化了模板A。
 
-参考： 
+参考：  
 [1] https://stackoverflow.com/questions/1788923/parameter-vs-argument  
 [2] https://en.cppreference.com/w/cpp/language/template_parameters  
 [3] https://en.cppreference.com/w/cpp/language/partial_specialization  
@@ -94,5 +94,5 @@ A<B> a;
 C++的作者Bjarne Stroustrup对此持不较真的态度，他在其著作*The C++ Programming Language 4th edition*中说道：
 > There are people who make semantic distinctions between the terms class template and template class. I don't; that would be too subtle: please consider those terms interchangeable. Similarly, I consider function template interchangeable with template function.
 
-参考：
+参考： 
 [1] https://stackoverflow.com/questions/879535/what-is-the-difference-between-a-template-class-and-a-class-template
