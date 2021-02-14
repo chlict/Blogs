@@ -61,7 +61,7 @@ template <class T, T t>
 ```
 理解了`template parameter`与`template argument`的区别，也更容易读懂编译器的报错信息了。
 
-### 1.3. 'template template parameter' vs 'template template argument'
+### 1.3. `template template parameter` vs `template template argument`
 前文说过，`template template parameter`是`template paramter`的一种，是指用模板来做模板参数。cppreference[2]中对其定义如下：
 
 > **Template template parameter**  
