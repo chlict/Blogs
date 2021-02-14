@@ -25,15 +25,15 @@ void Foo() {
 }
 ```
 cppreference[2]上对`template parameters`的解释：
-> **Template parameters** 
-> Every template is parameterized by one or more template parameters, indicated in the parameter-list of the template declaration syntax: 
-> template < parameter-list > declaration	
+> **Template parameters**  
+> Every template is parameterized by one or more template parameters, indicated in the parameter-list of the template declaration syntax:  
+> template < parameter-list > declaration
 
 其中的parameter又分为*non-type template parameter*, *type template parameter*和*template template parameter*，这里不再赘述。
 
 对`template arguments`的解释：
-> **Template arguments** 
-> In order for a template to be instantiated, every template parameter (type, non-type, or template) must be replaced by a corresponding template argument. 
+> **Template arguments**  
+> In order for a template to be instantiated, every template parameter (type, non-type, or template) must be replaced by a corresponding template argument.  
 
 C++中有一种*partial template specialization*的概念，它的语法定义是这样的[3]：
 ```
@@ -64,9 +64,9 @@ template <class T, T t>
 ### 1.3. 'template template parameter' vs 'template template argument'
 前文说过，`template template parameter`是`template paramter`的一种，是指用模板来做模板参数。cppreference[2]中对其定义如下：
 
-> **Template template parameter** 
-> template < parameter-list > typename(C++17)|class name(optional)	(1)	
-> template < parameter-list > typename(C++17)|class name(optional) = default	(2)	
+> **Template template parameter**  
+> template < parameter-list > typename(C++17)|class name(optional)	(1)	 
+> template < parameter-list > typename(C++17)|class name(optional) = default	(2)	 
 > template < parameter-list > typename(C++17)|class ... name(optional)	(3)	(since C++11)
 
 一般的`template parameter`也就是简单的'**typename|class** name'。
@@ -83,10 +83,10 @@ A<B> a;
 ```
 模板A中的`template <typename> X`就是一个`template template parameter`，B是一个可以匹配X的模板，在`A<B>`表达式中作为`template template argument`实例化了模板A。
 
-参考：
-[1] https://stackoverflow.com/questions/1788923/parameter-vs-argument 
-[2] https://en.cppreference.com/w/cpp/language/template_parameters 
-[3] https://en.cppreference.com/w/cpp/language/partial_specialization
+参考： 
+[1] https://stackoverflow.com/questions/1788923/parameter-vs-argument  
+[2] https://en.cppreference.com/w/cpp/language/template_parameters  
+[3] https://en.cppreference.com/w/cpp/language/partial_specialization  
 
 ## 2. 'class template' vs 'template class'
 理论上说，只有'class template'，没有'template class'。通常定义一个模板类即是定义了一个'class template'，意思是当用实际的类(arguments)替换掉里面的模板参数(parameters)时，这个模板就能生成一个类定义。有时候人们会称从模板实例化出来的类为'template class'，但标准的说法仍然是instantiation。
