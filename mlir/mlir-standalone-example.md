@@ -9,7 +9,7 @@ MLIR官方提供了一个toy工程来做MLIR的tutorial，其中介绍了toy语�
 > cmake -G Ninja .. -DMLIR_DIR=$PREFIX/lib/cmake/mlir -DLLVM_EXTERNAL_LIT=$BUILD_DIR/bin/llvm-lit
 > cmake --build . --target check-standalone
 > ```
-最后一步时可以增加--verbose选项把详细过程打印出来。共有13个子命令，前面几个子命令调用mlir-tblgen这个工具来生成MLIR所需的各种代码。比如第一步：
+其中PREFIX是LLVM install的位置。最后一步时可以增加--verbose选项把详细过程打印出来。共有13个子命令，前面几个子命令调用mlir-tblgen这个工具来生成MLIR所需的各种代码。比如第一步：
 ```shell
 [1/13] cd /Users/chenlong/software/llvm-project/mlir/examples/standalone/build && /Users/chenlong/software/llvm-project/build/bin/mlir-tblgen -gen-typedef-decls -I /Users/chenlong/software/llvm-project/mlir/examples/standalone/include/Standalone -I/Users/chenlong/software/llvm-project/llvm/include -I/Users/chenlong/software/llvm-project/build/include -I/Users/chenlong/software/llvm-project/mlir/include -I/Users/chenlong/software/llvm-project/build/tools/mlir/include -I/Users/chenlong/software/llvm-project/mlir/examples/standalone/include -I/Users/chenlong/software/llvm-project/mlir/examples/standalone/build/include /Users/chenlong/software/llvm-project/mlir/examples/standalone/include/Standalone/StandaloneOps.td --write-if-changed -o include/Standalone/StandaloneOpsTypes.h.inc -d include/Standalone/StandaloneOpsTypes.h.inc.d
 ```
